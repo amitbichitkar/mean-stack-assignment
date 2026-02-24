@@ -43,5 +43,8 @@ jobs:
           script: |
             cd /home/ubuntu/mean-stack-assignment/crud-dd-task-mean-app/crud-dd-task-mean-app
             
-            sudo docker-compose pull
-            sudo docker-compose up -d --build
+            # Docker images pull karne
+            sudo docker compose pull
+            
+            # Containers restart karne (Space vaparli ahe, dash nahi)
+            sudo docker compose up -d --force-recreate
