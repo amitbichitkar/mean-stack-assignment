@@ -42,6 +42,6 @@ jobs:
           port: 22
           script: |
             cd /home/ubuntu/mean-stack-assignment/crud-dd-task-mean-app/crud-dd-task-mean-app
-            # Khali dash (-) barobar ahe ka check kara
+            
             sudo docker-compose pull
             sudo docker-compose up -d --build
