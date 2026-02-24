@@ -21,13 +21,13 @@ jobs:
         run: |
           docker build -t amit719/mean-backend ./backend
           docker push amit719/mean-backend
-        working-directory: ./mean-stack-assignment/crud-dd-task-mean-app/crud-dd-task-mean-app
+        working-directory: crud-dd-task-mean-app/crud-dd-task-mean-app
 
       - name: Build & Push Frontend
         run: |
           docker build -t amit719/mean-frontend ./frontend
           docker push amit719/mean-frontend
-        working-directory: ./mean-stack-assignment/crud-dd-task-mean-app/crud-dd-task-mean-app
+        working-directory: crud-dd-task-mean-app/crud-dd-task-mean-app
 
   deploy:
     needs: build-and-push
