@@ -19,12 +19,14 @@ jobs:
 
       - name: Build & Push Backend
         run: |
-          docker build -t amit719/mean-backend ./backend
+          # Ithe path badalla aahe (Folder structure nusar)
+          docker build -t amit719/mean-backend ./mean-stack-assignment/crud-dd-task-mean-app/crud-dd-task-mean-app/backend
           docker push amit719/mean-backend
 
       - name: Build & Push Frontend
         run: |
-          docker build -t amit719/mean-frontend ./frontend
+          # Ithe path badalla aahe
+          docker build -t amit719/mean-frontend ./mean-stack-assignment/crud-dd-task-mean-app/crud-dd-task-mean-app/frontend
           docker push amit719/mean-frontend
 
   deploy:
@@ -38,6 +40,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
+            # Ithe server varil path
             cd /home/ubuntu/mean-stack-assignment/crud-dd-task-mean-app/crud-dd-task-mean-app
             sudo docker compose pull
             sudo docker compose up -d --build
