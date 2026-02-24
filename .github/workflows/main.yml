@@ -29,7 +29,7 @@ jobs:
           docker push amit719/mean-frontend
         working-directory: crud-dd-task-mean-app/crud-dd-task-mean-app
 
-  deploy:
+deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
     steps:
@@ -39,7 +39,9 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22  # He add kara
           script: |
+            # Folder madhe ja (Path check kara)
             cd /home/ubuntu/mean-stack-assignment/crud-dd-task-mean-app/crud-dd-task-mean-app
             sudo docker compose pull
             sudo docker compose up -d --build
